@@ -1,0 +1,102 @@
+@import "nullstyle.scss";
+/* -------------------- */
+//Шаблони
+%tpl-main-text{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-container {
+  background-color: #C9D7DD;
+  @extend %tpl-main-text;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  > div {
+    padding: 0 20px;
+  }
+}
+
+main {
+  flex: 1;
+  background-color: #FFFFFF;
+}
+
+.weather-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  color: #FFFFFF;
+  @extend %tpl-main-text;
+
+}
+
+.weather-block {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #FFA447;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10%;
+  .city-name {
+    font-size: 32px;
+  }
+  .temperature {
+    font-size: 24px;
+    padding-bottom: 15px;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  > div {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+  .header-container, .weather-block {
+    padding: 10px;
+  }
+
+  .weather-content {
+    flex-direction: column;
+  }
+
+  .weather-block {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .city-name, .temperature, .feels-like, .humidity, .wind-speed {
+    font-size: smaller;
+  }
+}
